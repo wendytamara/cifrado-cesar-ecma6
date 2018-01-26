@@ -1,17 +1,17 @@
 $(document).ready(function(){
 
-var btnCipher = $('#cipher');
-var btnDecipher = $('#decipher');
+const btnCipher = $('#cipher');
+const btnDecipher = $('#decipher');
 
-btnCipher.on('click', cipher);
-btnDecipher.on('click', decipher);
 
-function cipher(){
-  var wordsToEncrypt = $('#input-cesar').val();
-  var container = $('#content-cipher');
+// funcion para cifrar
+btnCipher.on('click', () => {
+
+  const wordsToEncrypt = $('#input-cesar').val();
+  const container = $('#content-cipher');
   if (wordsToEncrypt) {
-    var chartValue = 0;
-    var cipherWord ='';
+    let chartValue = 0;
+    let cipherWord ='';
 
        for (var i=0; i<wordsToEncrypt.length; i++){
          chartValue = wordsToEncrypt.charCodeAt(i);
@@ -25,19 +25,27 @@ function cipher(){
              chartValue = String.fromCharCode(chartValue);
              cipherWord = cipherWord + chartValue
          }
+         else if(chartValue === 32) {
+           let space = ' ';
+           cipherWord += space;
+         }
        }
 
         container.text(cipherWord);
   }
-};
+});
 
 
-function decipher() {
-  var wordsToEncryptDecipher = $('#input-cesar').val();
-  var container = $('#content-cipher');
+// funcion para descifrar
+
+btnDecipher.on('click', () => {
+
+  const wordsToEncryptDecipher = $('#input-cesar').val();
+  const container = $('#content-cipher');
+
   if (wordsToEncryptDecipher) {
-    var chartValue2 = 0;
-    var deCipherWord ='';
+    let chartValue2 = 0;
+    let deCipherWord ='';
 
        for (var i=0; i<wordsToEncryptDecipher.length ; i++){
          chartValue2 = wordsToEncryptDecipher.charCodeAt(i);
@@ -51,10 +59,15 @@ function decipher() {
              chartValue2 = String.fromCharCode(chartValue2);
              deCipherWord = deCipherWord+ chartValue2
          }
+          else if(chartValue2 === 32) {
+            let space = ' ';
+            deCipherWord += space;
+
+          }
        }
        container.text(deCipherWord);
   }
-}
+});
 
 
 
