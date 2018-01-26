@@ -63,7 +63,7 @@ btnDecipher.on('click', () => {
              deCipherWord = deCipherWord+ chartValue2
          }
          else if(chartValue2>=97 && chartValue2<=122){
-             chartValue2 = (chartValue2 + 97 - 45 )%26+97;
+             chartValue2 = (chartValue2  - 45 - desplazamiento )%26+97;
              chartValue2 = String.fromCharCode(chartValue2);
              deCipherWord = deCipherWord+ chartValue2
          }
