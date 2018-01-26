@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 const btnCipher = $('#cipher');
 const btnDecipher = $('#decipher');
+const regex = /^[a-zA-Z]*$/;
+
 
 
 // funcion para cifrar
@@ -9,7 +11,8 @@ btnCipher.on('click', () => {
 
   const wordsToEncrypt = $('#input-cesar').val();
   const container = $('#content-cipher');
-  if (wordsToEncrypt) {
+
+  if (wordsToEncrypt && regex.test(wordsToEncrypt) ) {
     let chartValue = 0;
     let cipherWord ='';
 
@@ -33,6 +36,9 @@ btnCipher.on('click', () => {
 
         container.text(cipherWord);
   }
+  else {
+    alert('ingrese solo letras')
+  }
 });
 
 
@@ -43,7 +49,7 @@ btnDecipher.on('click', () => {
   const wordsToEncryptDecipher = $('#input-cesar').val();
   const container = $('#content-cipher');
 
-  if (wordsToEncryptDecipher) {
+  if (wordsToEncryptDecipher && regex.test(wordsToEncryptDecipher)) {
     let chartValue2 = 0;
     let deCipherWord ='';
 
@@ -66,6 +72,9 @@ btnDecipher.on('click', () => {
           }
        }
        container.text(deCipherWord);
+  }
+  else {
+    alert('ingrese solo letras')
   }
 });
 

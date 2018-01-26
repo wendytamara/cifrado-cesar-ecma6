@@ -1,10 +1,6 @@
 # CIFRADO CESAR
 
-* **Track:** _Common Core_
-* **Curso:** _Crea tu propia red social_
-* **Unidad:** _Agiliza tu desarrollo_
 
-***
 ## Objetivos
 
 Realizar cifrado y descifrado del codigo cesar con ECMA SCRIPT 6
