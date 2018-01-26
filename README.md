@@ -12,6 +12,7 @@ Para éllo hay algunos puntos básicos con los que cuenta:
 - cifrar y descifrar una palabra u oracion .
 - Respeta espacios en blanco .
 - cifrar y descifrar tanto en mayuscula como minuscula.
+- campo para añadier el numero de desplazamiento.
 
 
 
